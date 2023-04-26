@@ -1,5 +1,41 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+    font-size: 4em;
+}
 
+.section {
+    height: 100vh;
+}
 
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 500px;
+    border: 2px solid black;
+}
+
+.grid-box {
+    height: 30px;
+    width: 30px;
+    display: border-box;
+    display: flex;
+    flex-basis: 6.25%;
+    border: 1px solid black;
+}
+
+/* .grid-container {
+    display: flex;
+} */
 
 
 /* Box sizing rules */
