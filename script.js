@@ -5,6 +5,7 @@ function createGrid (rows, cols) {
         const gridBox = document.createElement('div');
         gridBox.classList.add("grid-box");
         gridContainer.appendChild(gridBox);
+
     }
 }
 
