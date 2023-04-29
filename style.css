@@ -12,15 +12,17 @@ h1 {
 .container {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 15px;
 }
 
 .grid-container {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   width: 500px;
+  height: auto;
   border: 3px solid black;
 }
 
@@ -37,9 +39,15 @@ h1 {
 background-color: black;
 }
 
-/* .grid-container {
+.menu {
+  border: 2px solid red;
+  width: 300px;
+}
+
+.container {
   display: flex;
-} */
+  justify-content: center;
+}
 
 
 /* Box sizing rules */
