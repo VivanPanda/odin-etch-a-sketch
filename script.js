@@ -1,16 +1,22 @@
 const gridContainer = document.querySelector('.grid-container');
-const blackButton = document.getElementsByClassName('color-black');
-const eraserButton = document.getElementsByClassName('eraser');
-const resetButton = document.getElementsByClassName('reset');
-const menuButtons = document.getElementsByClassName('menu-button')
+const blackButton = document.querySelector('.color-black');
+const eraserButton = document.querySelector('.eraser');
+const resetButton = document.querySelector('.reset');
+const menuButtons = document.querySelector('.menu-button')
+let slider = document.querySelector('.slider');
+const output = document.querySelector("#value");
 
-
+output.innerHTML = slider.value;
+slider.oninput = function() {
+    output.innerHTML = this.value;
+}
 
 function createGrid (rows, cols) {
     for (let i = 0; i < (rows * cols); i++) {
         let gridBoxCreation = document.createElement('div');
         gridBoxCreation.classList.add("grid-box");
         gridContainer.appendChild(gridBoxCreation);
+        
     }
 }
 
