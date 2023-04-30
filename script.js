@@ -26,8 +26,9 @@ function createGrid (rows, cols) {
 
  slider.addEventListener("change", () => {
     gridBoxes = document.querySelectorAll('.grid-box');
-    cellHeight = (gridHeight / output.innerHTML);
-    cellWidth = (gridHeight / output.innerHTML);
+    outputValue = parseInt(output.innerHTML);
+    cellHeight = (gridHeight/outputValue);
+    cellWidth = (gridHeight/outputValue);
     for (let a = 0; a < (gridBoxes.length); a++) {
         gridBoxes[a].style.height = `${cellHeight}px`;
         gridBoxes[a].style.width = `${cellWidth}px`;
