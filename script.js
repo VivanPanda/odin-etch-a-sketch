@@ -25,14 +25,12 @@ function createGrid (rows, cols) {
 }
 
  slider.addEventListener("change", () => {
-    
     gridBoxes = document.querySelectorAll('.grid-box');
     cellHeight = (gridHeight / output.innerHTML);
     cellWidth = (gridHeight / output.innerHTML);
     for (let a = 0; a < (gridBoxes.length); a++) {
-        console.log(gridBoxes)
-        gridBoxes[a].style.height = cellHeight;
-        gridBoxes[a].style.width = cellWidth;
+        gridBoxes[a].style.height = `${cellHeight}px`;
+        gridBoxes[a].style.width = `${cellWidth}px`;
     }
  })
 
