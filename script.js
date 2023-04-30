@@ -22,7 +22,7 @@ function createGrid (side) {
         gridBoxCreation.classList.add("grid-box");
         gridContainer.appendChild(gridBoxCreation);
     }
-}
+} 
 
  slider.addEventListener("change", () => {
     gridBoxes = document.querySelectorAll('.grid-box');
@@ -30,6 +30,7 @@ function createGrid (side) {
     cellHeight = (gridHeight/outputValue);
     cellWidth = (gridHeight/outputValue);
     createGrid(outputValue);
+    removeGrid();
     for (let a = 0; a < (gridBoxes.length); a++) {
         gridBoxes.style.height = `${cellHeight}px`;
         gridBoxes.style.width = `${cellWidth}px`;
