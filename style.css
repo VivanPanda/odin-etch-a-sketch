@@ -20,6 +20,10 @@ h1 {
   padding: 15px;
 }
 
+.value-text {
+  font-size: 18px;
+}
+
 .grid-container {
   display: flex;
   flex-direction: row;
