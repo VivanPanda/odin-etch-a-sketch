@@ -29,9 +29,10 @@ function createGrid (side) {
     let outputValue = parseInt(output.innerHTML);
     cellHeight = (gridHeight/outputValue);
     cellWidth = (gridHeight/outputValue);
+    createGrid(outputValue);
     for (let a = 0; a < (gridBoxes.length); a++) {
-        gridBoxes[a].style.height = `${cellHeight}px`;
-        gridBoxes[a].style.width = `${cellWidth}px`;
+        gridBoxes.style.height = `${cellHeight}px`;
+        gridBoxes.style.width = `${cellWidth}px`;
     }
  })
 
@@ -52,7 +53,6 @@ function erase() {
         })
     };
 }
-
 
 createGrid(parseInt(output.innerHTML));
 makeColorBlack();
