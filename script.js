@@ -16,8 +16,8 @@ slider.oninput = function() {
     output.innerHTML = this.value;
 }
 
-function createGrid (rows, cols) {
-    for (let i = 0; i < (rows * cols); i++) {
+function createGrid (side) {
+    for (let i = 0; i < (side * side); i++) {
         let gridBoxCreation = document.createElement('div');
         gridBoxCreation.classList.add("grid-box");
         gridContainer.appendChild(gridBoxCreation);
@@ -26,7 +26,7 @@ function createGrid (rows, cols) {
 
  slider.addEventListener("change", () => {
     gridBoxes = document.querySelectorAll('.grid-box');
-    outputValue = parseInt(output.innerHTML);
+    let outputValue = parseInt(output.innerHTML);
     cellHeight = (gridHeight/outputValue);
     cellWidth = (gridHeight/outputValue);
     for (let a = 0; a < (gridBoxes.length); a++) {
@@ -55,5 +55,5 @@ function erase() {
 
 
 
-createGrid(16,16);
+createGrid(parseInt(output.innerHTML));
 makeColorBlack();
