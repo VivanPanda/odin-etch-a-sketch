@@ -54,6 +54,5 @@ function erase() {
 }
 
 
-
 createGrid(parseInt(output.innerHTML));
 makeColorBlack();
