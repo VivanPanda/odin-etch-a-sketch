@@ -1,16 +1,22 @@
+// Declare Variables
+
 let gridContainer = document.querySelector('.grid-container');
-const blackButton = document.querySelector('.color-black');
-const eraserButton = document.querySelector('.eraser');
-const resetButton = document.querySelector('.reset');
-const menuButtons = document.querySelector('.menu-button')
 let slider = document.querySelector('.slider');
-const output = document.querySelector(".value");
 let gridBoxes;
 let gridHeight = 500;
 let gridWidth = 500;
 let cellHeight;
 let cellWidth;
 let outputValue;
+
+const blackButton = document.querySelector('.color-black');
+const eraserButton = document.querySelector('.eraser');
+const resetButton = document.querySelector('.reset');
+const menuButtons = document.querySelector('.menu-button')
+const output = document.querySelector(".value");
+
+
+// Change output value next to slider text
 
 output.innerHTML = slider.value;
 slider.oninput = function() {
@@ -33,8 +39,8 @@ function createGrid (side) {
     gridContainer.innerHTML = " ";
     createGrid(outputValue);
     for (let a = 0; a < (gridBoxes.length); a++) {
-        gridBoxes.style.height = `${cellHeight}px`;
-        gridBoxes.style.width = `${cellWidth}px`;
+        gridBoxes[a].style.height = `${cellHeight}px`;
+        gridBoxes[a].style.width = `${cellWidth}px`;
     }
  })
 
@@ -56,5 +62,5 @@ function erase() {
     };
 }
 
-createGrid(parseInt(output.innerHTML));
+createGrid(16);
 makeColorBlack();
