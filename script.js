@@ -29,8 +29,8 @@ function createGrid (side) {
     let outputValue = parseInt(output.innerHTML);
     cellHeight = (gridHeight/outputValue);
     cellWidth = (gridHeight/outputValue);
+    gridContainer.innerHTML = " ";
     createGrid(outputValue);
-    removeGrid();
     for (let a = 0; a < (gridBoxes.length); a++) {
         gridBoxes.style.height = `${cellHeight}px`;
         gridBoxes.style.width = `${cellWidth}px`;
