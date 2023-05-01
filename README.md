@@ -1,8 +1,14 @@
-# etch-a-sketch
+# Etch A Sketch
 
-Things I have learnt:
+## What did this project teach me?:
  
-- Manipulating DOM
-- Using input types in HTML
-- Event listeners
+### JavaScript
+
+- JavaScript DOM Manipulation
+  - Event Listeners & Event Handlers: `change`, `mouseover`
 - String manipulation
+  - String concatenation
+
+### HTML
+
+- Using input types in HTML: `type="range"`
