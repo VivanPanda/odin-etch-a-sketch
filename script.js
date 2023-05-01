@@ -44,10 +44,12 @@ function createGrid (side) {
     flexBasisValue = `${flexBasisValue}%`
     for (let a = 0; a < (gridBoxes.length); a++) {
         gridBoxes[a].style.height = `${cellHeight}px`;
-        gridBoxes[a].style.width = `${cellWidth}px`;
+        gridBoxes[a].style.width = `${cellWidth}px`;    
         gridBoxes[a].style.flexBasis = flexBasisValue;
     }
  })
+
+// Function to make the grid cells black
 
 function makeColorBlack() {
     let gridBoxes = document.querySelectorAll('.grid-box');
@@ -57,6 +59,8 @@ function makeColorBlack() {
         })
     };
 }
+
+// Function to erase grid cells - make the grid cells white
 
 function erase() {
     let gridBoxes = document.querySelectorAll('.grid-box');
