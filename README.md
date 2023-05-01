@@ -1,6 +1,6 @@
 # Etch A Sketch
 
-## What did this project teach me?:
+## What did this project teach me?
  
 ### JavaScript
 
