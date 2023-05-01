@@ -10,6 +10,7 @@ let gridHeight = 500;
 let gridWidth = 500;
 let cellHeight;
 let cellWidth;
+let outputValue;
 
 output.innerHTML = slider.value;
 slider.oninput = function() {
@@ -26,7 +27,7 @@ function createGrid (side) {
 
  slider.addEventListener("change", () => {
     gridBoxes = document.querySelectorAll('.grid-box');
-    let outputValue = parseInt(output.innerHTML);
+    outputValue = parseInt(output.innerHTML);
     cellHeight = (gridHeight/outputValue);
     cellWidth = (gridHeight/outputValue);
     gridContainer.innerHTML = " ";
