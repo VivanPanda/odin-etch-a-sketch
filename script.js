@@ -8,6 +8,7 @@ let gridWidth = 500;
 let cellHeight;
 let cellWidth;
 let outputValue;
+let flexBasisValue;
 
 const blackButton = document.querySelector('.color-black');
 const eraserButton = document.querySelector('.eraser');
@@ -18,6 +19,7 @@ const output = document.querySelector(".value");
 
 // Change output value next to slider text
 
+outputValue = parseInt(output.innerHTML);
 output.innerHTML = slider.value;
 slider.oninput = function() {
     output.innerHTML = this.value;
@@ -33,14 +35,17 @@ function createGrid (side) {
 
  slider.addEventListener("change", () => {
     gridBoxes = document.querySelectorAll('.grid-box');
-    outputValue = parseInt(output.innerHTML);
+    outputValue = slider.value;
     cellHeight = (gridHeight/outputValue);
     cellWidth = (gridHeight/outputValue);
     gridContainer.innerHTML = " ";
     createGrid(outputValue);
+    flexBasisValue = ((1 / outputValue) * 100);
+    flexBasisValue = `${flexBasisValue}%`
     for (let a = 0; a < (gridBoxes.length); a++) {
         gridBoxes[a].style.height = `${cellHeight}px`;
         gridBoxes[a].style.width = `${cellWidth}px`;
+        gridBoxes[a].style.flexBasis = flexBasisValue;
     }
  })
 
