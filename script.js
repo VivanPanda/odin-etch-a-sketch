@@ -9,6 +9,7 @@ let cellHeight;
 let cellWidth;
 let outputValue;
 let flexBasisValue;
+let gridBoxCreation;
 
 const blackButton = document.querySelector('.color-black');
 const eraserButton = document.querySelector('.eraser');
@@ -27,19 +28,19 @@ slider.oninput = function() {
 
 function createGrid (side) {
     for (let i = 0; i < (side * side); i++) {
-        let gridBoxCreation = document.createElement('div');
+        gridBoxCreation = document.createElement('div');
         gridBoxCreation.classList.add("grid-box");
         gridContainer.appendChild(gridBoxCreation);
     }
 } 
 
  slider.addEventListener("change", () => {
-    gridBoxes = document.querySelectorAll('.grid-box');
     outputValue = slider.value;
+    gridContainer.innerHTML = '';
+    createGrid(outputValue);
+    gridBoxes = document.querySelectorAll('.grid-box');
     cellHeight = (gridHeight/outputValue);
     cellWidth = (gridHeight/outputValue);
-    gridContainer.innerHTML = " ";
-    createGrid(outputValue);
     flexBasisValue = ((1 / outputValue) * 100);
     flexBasisValue = `${flexBasisValue}%`
     for (let a = 0; a < (gridBoxes.length); a++) {
