@@ -11,4 +11,4 @@
 
 ### HTML
 
-- Using input types in HTML: `type="range"`
+- Using input types in HTML: `type="range", type="color"`
