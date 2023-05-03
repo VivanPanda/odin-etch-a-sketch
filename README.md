@@ -12,3 +12,7 @@
 ### HTML
 
 - Using input types in HTML: `type="range", type="color"`
+
+### CSS
+
+- How to remove platform-native styling using `-webkit-appearance`
