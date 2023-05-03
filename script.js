@@ -3,8 +3,8 @@
 let gridContainer = document.querySelector('.grid-container');
 let slider = document.querySelector('.slider');
 let gridBoxes;
-let gridHeight = 500;
-let gridWidth = 500;
+let gridHeight = 480;
+let gridWidth = 480;
 let cellHeight;
 let cellWidth;
 let outputValue;
@@ -34,22 +34,6 @@ function createGrid (side) {
     }
 } 
 
- slider.addEventListener("change", () => {
-    outputValue = slider.value;
-    gridContainer.innerHTML = '';
-    createGrid(outputValue);
-    gridBoxes = document.querySelectorAll('.grid-box');
-    cellHeight = (gridHeight/outputValue);
-    cellWidth = (gridHeight/outputValue);
-    flexBasisValue = ((1 / outputValue) * 100);
-    flexBasisValue = `${flexBasisValue}%`
-    for (let a = 0; a < (gridBoxes.length); a++) {
-        gridBoxes[a].style.height = `${cellHeight}px`;
-        gridBoxes[a].style.width = `${cellWidth}px`;    
-        gridBoxes[a].style.flexBasis = flexBasisValue;
-    }
- })
-
 // Function to make the grid cells black
 
 function makeColorBlack() {
@@ -71,6 +55,23 @@ function erase() {
         })
     };
 }
+
+ slider.addEventListener("change", () => {
+    outputValue = slider.value;
+    gridContainer.innerHTML = '';
+    createGrid(outputValue);
+    gridBoxes = document.querySelectorAll('.grid-box');
+    cellHeight = (gridHeight/outputValue);
+    cellWidth = (gridHeight/outputValue);
+    flexBasisValue = ((1 / outputValue) * 100);
+    flexBasisValue = `${flexBasisValue}%`
+    for (let a = 0; a < (gridBoxes.length); a++) {
+        gridBoxes[a].style.height = `${cellHeight}px`;
+        gridBoxes[a].style.width = `${cellWidth}px`;    
+        gridBoxes[a].style.flexBasis = flexBasisValue;
+    }
+    makeColorBlack();
+ })
 
 createGrid(16);
 makeColorBlack();
