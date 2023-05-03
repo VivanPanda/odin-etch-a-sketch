@@ -57,6 +57,7 @@ colorPicker.addEventListener('input', () => {
     console.log(colorValue)
 })
 
+
 // Function to erase grid cells - make the grid cells white
 
 function erase() {
