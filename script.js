@@ -43,7 +43,7 @@ function makeColorBlack() {
     let gridBoxes = document.querySelectorAll('.grid-box');
     for (let j = 0; j < (gridBoxes.length); j++) {
         gridBoxes[j].addEventListener('mouseover', () => {
-            gridBoxes[j].classList.add('black');
+            gridBoxes[j].classList.add('color');
         })
     };
 }
@@ -52,10 +52,9 @@ function makeColorBlack() {
 
 let colorValue = colorPicker.value;
 
-colorPicker.addEventListener('input', () => {
+colorPicker.oninput = function () {
     colorValue = colorPicker.value;
-    console.log(colorValue)
-})
+}
 
 
 // Function to erase grid cells - make the grid cells white
