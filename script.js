@@ -2,14 +2,15 @@
 
 let gridContainer = document.querySelector('.grid-container');
 let slider = document.querySelector('.slider');
+let colorPicker = document.querySelector('#color-picker');
 let gridBoxes;
-let gridHeight = 480;
-let gridWidth = 480;
 let cellHeight;
 let cellWidth;
 let outputValue;
 let flexBasisValue;
 let gridBoxCreation;
+let gridHeight = 480;
+let gridWidth = 480;
 
 const blackButton = document.querySelector('.color-black');
 const eraserButton = document.querySelector('.eraser');
@@ -25,6 +26,8 @@ output.innerHTML = slider.value;
 slider.oninput = function() {
     output.innerHTML = this.value;
 }
+
+// Function to create the grid
 
 function createGrid (side) {
     for (let i = 0; i < (side * side); i++) {
@@ -45,6 +48,15 @@ function makeColorBlack() {
     };
 }
 
+// Get color picker value
+
+let colorValue = colorPicker.value;
+
+colorPicker.addEventListener('input', () => {
+    colorValue = colorPicker.value;
+    console.log(colorValue)
+})
+
 // Function to erase grid cells - make the grid cells white
 
 function erase() {
@@ -55,6 +67,8 @@ function erase() {
         })
     };
 }
+
+// Event listener for the changing of the slider
 
  slider.addEventListener("change", () => {
     outputValue = slider.value;
@@ -72,6 +86,7 @@ function erase() {
     }
     makeColorBlack();
  })
+
 
 createGrid(16);
 makeColorBlack();
