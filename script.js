@@ -50,8 +50,6 @@ function makeColorBlack() {
 
 // Change according to color picker value
 
-let colorValue = colorPicker.value;
-
 colorPicker.oninput = function () {
     colorValue = colorPicker.value;
     let gridBoxes = document.querySelectorAll('.grid-box');
@@ -62,6 +60,8 @@ colorPicker.oninput = function () {
     };
 }
 
+let colorValue = colorPicker.value;
+
 
 // Function to erase grid cells - make the grid cells white
 
@@ -69,6 +69,8 @@ function erase() {
     let gridBoxes = document.querySelectorAll('.grid-box');
     for (let k = 0; k < (gridBoxes.length); k++) {
         gridBoxes[k].addEventListener('mouseover', () => {
+            gridBoxes[k].classList.remove('black');
+            gridBoxes[k].style.backgroundColor = 'white';
             gridBoxes[k].classList.add('erase');
         })
     };
@@ -91,10 +93,23 @@ function erase() {
         gridBoxes[a].style.flexBasis = flexBasisValue;
     }
     makeColorBlack();
+
+    colorPicker.oninput = function () {
+        colorValue = colorPicker.value;
+        let gridBoxes = document.querySelectorAll('.grid-box');
+        for (let b = 0; b < (gridBoxes.length); b++) {
+            gridBoxes[b].addEventListener('mouseover', () => {
+                gridBoxes[b].style.backgroundColor = colorValue;
+            })
+        };
+    }
+
+    let colorValue = colorPicker.value;
  })
 
 eraserButton.addEventListener('click', () => {
     erase();
+    removeEventListener();
 })
 
 createGrid(16);
