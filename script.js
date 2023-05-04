@@ -43,7 +43,7 @@ function makeColorBlack() {
     let gridBoxes = document.querySelectorAll('.grid-box');
     for (let j = 0; j < (gridBoxes.length); j++) {
         gridBoxes[j].addEventListener('mouseover', () => {
-            gridBoxes[j].classList.add('color');
+            gridBoxes[j].classList.add('black');
         })
     };
 }
@@ -54,6 +54,12 @@ let colorValue = colorPicker.value;
 
 colorPicker.oninput = function () {
     colorValue = colorPicker.value;
+    let gridBoxes = document.querySelectorAll('.grid-box');
+    for (let b = 0; b < (gridBoxes.length); b++) {
+        gridBoxes[b].addEventListener('mouseover', () => {
+            gridBoxes[b].style.backgroundColor = colorValue;
+        })
+    };
 }
 
 
