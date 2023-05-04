@@ -16,3 +16,4 @@
 ### CSS
 
 - How to remove platform-native styling using `-webkit-appearance`
+- Pseudo class `:focus`

@@ -112,5 +112,18 @@ eraserButton.addEventListener('click', () => {
     removeEventListener();
 })
 
+blackButton.addEventListener('click', () => {
+    makeColorBlack();
+    removeEventListener();
+})
+
+// Make Reset Button
+
+resetButton.addEventListener('click', () => {
+    gridContainer.innerHTML = '';
+    createGrid(16);
+    makeColorBlack();
+})
+
 createGrid(16);
 makeColorBlack();
