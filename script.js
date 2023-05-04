@@ -48,7 +48,7 @@ function makeColorBlack() {
     };
 }
 
-// Get color picker value
+// Change according to color picker value
 
 let colorValue = colorPicker.value;
 
@@ -93,6 +93,9 @@ function erase() {
     makeColorBlack();
  })
 
+eraserButton.addEventListener('click', () => {
+    erase();
+})
 
 createGrid(16);
 makeColorBlack();
