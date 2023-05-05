@@ -10,6 +10,7 @@ let outputValue;
 let flexBasisValue;
 let gridBoxCreation;
 let randomColorValue;
+let shadingColorValue;
 let gridHeight = 480;
 let gridWidth = 480;
 
@@ -192,10 +193,22 @@ shadingButton.addEventListener('click', () => {
     colorButton.classList.remove('button-focus');
     eraserButton.classList.remove('button-focus');
     rainbowButton.classList.remove('button-focus')
+
+    let shadingColorValue1 = '#e8e8e8';
+    let shadingColorValue2 = '#bdbdbd';
+    let shadingColorValue3 = '#7a7a7a';
+    let shadingColorValue4 = '#474747';
+    let shadingColorValue5 = '#000000';
+
+    let gridBoxes = document.querySelectorAll('.grid-box');
+    for (let b = 0; b < (gridBoxes.length); b++) {
+        gridBoxes[b].addEventListener('mouseover', () => {
+            gridBoxes[b].style.backgroundColor = shadingColorValue1;
+        })
+    };
 })
 
-
-// Make Reset Button
+// Make Reset Button Functionality
 
 resetButton.addEventListener('click', () => {
     gridContainer.innerHTML = '';
