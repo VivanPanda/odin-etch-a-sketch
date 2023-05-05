@@ -144,7 +144,7 @@ button:hover {
   color: white;
 }
 
-.color-black:focus {
+.color-button:focus {
   background-color: gray;
   border: 1px solid black;
   color: white;

@@ -12,14 +12,14 @@ let gridBoxCreation;
 let gridHeight = 480;
 let gridWidth = 480;
 
-const blackButton = document.querySelector('.color-black');
+const colorButton = document.querySelector('.color-button');
 const eraserButton = document.querySelector('.eraser');
 const resetButton = document.querySelector('.reset');
 const menuButtons = document.querySelector('.menu-button')
 const output = document.querySelector(".value");
 
 window.onload = function() {
-    blackButton.focus()
+    colorButton.focus()
 }
 
 // Change output value next to slider text
@@ -110,12 +110,13 @@ function erase() {
  })
 
 eraserButton.addEventListener('click', () => {
-    eraserButton.classList.add('eraser:focus')
+    eraserButton.focus();
     erase();
     eraserButton.removeEventListener('click', eraserButton);
 })
 
-blackButton.addEventListener('click', () => { 
+colorButton.addEventListener('click', () => { 
+    colorButton.focus();
     let colorValue = '#000000'; 
     colorValue = colorPicker.value;
     let gridBoxes = document.querySelectorAll('.grid-box');
