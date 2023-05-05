@@ -228,6 +228,14 @@ shadingButton.addEventListener('click', () => {
 // Make Reset Button Functionality
 
 resetButton.addEventListener('click', () => {
+
+    // Change selected button css
+
+    colorButton.classList.add('button-focus');
+    eraserButton.classList.remove('button-focus');
+    rainbowButton.classList.remove('button-focus');
+    shadingButton.classList.remove('button-focus');
+
     gridContainer.innerHTML = '';
     createGrid(16);
     makeColorBlack();
