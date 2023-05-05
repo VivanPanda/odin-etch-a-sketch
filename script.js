@@ -192,6 +192,7 @@ let shadingColorValue2 = '#bdbdbd';
 let shadingColorValue3 = '#7a7a7a';
 let shadingColorValue4 = '#474747';
 let shadingColorValue5 = '#000000';
+let shadingValue = 0;
 
 shadingButton.addEventListener('click', () => {
     
@@ -205,10 +206,24 @@ shadingButton.addEventListener('click', () => {
     let gridBoxes = document.querySelectorAll('.grid-box');
     for (let b = 0; b < (gridBoxes.length); b++) {
         gridBoxes[b].addEventListener('mouseover', () => {
-            gridBoxes[b].style.backgroundColor = shadingColorValue1;
+            shadingValue += 1;
+            // console.log(shadingValue);
+            if (shadingValue == 1) {
+                gridBoxes[b].style.backgroundColor = '#e8e8e8';
+            } else if (shadingValue == 2) {
+                gridBoxes[b].style.backgroundColor = '#bdbdbd';
+            } else if (shadingValue == 3) {
+                gridBoxes[b].style.backgroundColor = '#7a7a7a';
+            } else if (shadingValue == 4) {
+                gridBoxes[b].style.backgroundColor = '#474747';
+            } else if (shadingValue == 5) {
+                gridBoxes[b].style.backgroundColor = '#000000';
+            }
         })
     };
 })
+
+
 
 // Make Reset Button Functionality
 
