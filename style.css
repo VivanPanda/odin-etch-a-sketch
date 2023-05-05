@@ -138,15 +138,7 @@ button:hover {
   border: 1px solid black;
 }
 
-.eraser-focus {
-  background-color: gray;
-  border: 1px solid black;
-  color: white;
-  outline: none;
-  pointer-events: none;
-}
-
-.color-button-focus {
+.button-focus {
   background-color: gray;
   border: 1px solid black;
   color: white;

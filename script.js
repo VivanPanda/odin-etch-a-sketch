@@ -14,6 +14,8 @@ let gridWidth = 480;
 
 const colorButton = document.querySelector('.color-button');
 const eraserButton = document.querySelector('.eraser');
+const rainbowButton = document.querySelector('.rainbow');
+const shadingButton = document.querySelector('.shading');
 const resetButton = document.querySelector('.reset');
 const menuButtons = document.querySelector('.menu-button')
 const output = document.querySelector(".value");
@@ -21,7 +23,7 @@ const output = document.querySelector(".value");
 // Make the color button enabled at the start
 
 window.onload = function() {
-    colorButton.classList.add('color-button-focus');
+    colorButton.classList.add('button-focus');
 }
 
 // Change output value next to slider text
@@ -96,7 +98,7 @@ function erase() {
         gridBoxes[a].style.width = `${cellWidth}px`;    
         gridBoxes[a].style.flexBasis = flexBasisValue;
     }
-    
+
     makeColorBlack();
 
     let colorValue = colorPicker.value;
@@ -120,28 +122,18 @@ function erase() {
  })
 
 colorPicker.addEventListener('click', () => {
-    colorButton.classList.add('color-button-focus');
-    eraserButton.classList.remove('eraser-focus');
-})
-
- 
-eraserButton.addEventListener('click', () => {
-
-    // Remove the color button focused css and add the eraser button focused css
-
-    eraserButton.classList.add('eraser-focus');
-    colorButton.classList.remove('color-button-focus');
-
-    erase();
-    eraserButton.removeEventListener('click', eraserButton);
+    colorButton.classList.add('button-focus');
+    eraserButton.classList.remove('button-focus');
 })
 
 colorButton.addEventListener('click', () => { 
 
-    // Remove the eraser button focused css and add the colored button focused css
+    // Change selected button css
     
-    colorButton.classList.add('color-button-focus');
-    eraserButton.classList.remove('eraser-focus');
+    colorButton.classList.add('button-focus');
+    eraserButton.classList.remove('button-focus');
+    rainbowButton.classList.remove('button-focus');
+    shadingButton.classList.remove('button-focus');
 
     let colorValue = '#000000'; 
     colorValue = colorPicker.value;
@@ -152,6 +144,41 @@ colorButton.addEventListener('click', () => {
         })
     };
 })
+ 
+eraserButton.addEventListener('click', () => {
+
+    // Change selected button css
+
+    eraserButton.classList.add('button-focus');
+    colorButton.classList.remove('button-focus');
+    rainbowButton.classList.remove('button-focus');
+    shadingButton.classList.remove('button-focus');
+
+    erase();
+    eraserButton.removeEventListener('click', eraserButton);
+})
+
+rainbowButton.addEventListener('click', () => {
+    
+    // Change selected button css
+
+    rainbowButton.classList.add('button-focus');
+    colorButton.classList.remove('button-focus');
+    eraserButton.classList.remove('button-focus');
+    shadingButton.classList.remove('button-focus');
+
+})
+
+shadingButton.addEventListener('click', () => {
+    
+    // Change selected button css
+
+    shadingButton.classList.add('button-focus');
+    colorButton.classList.remove('button-focus');
+    eraserButton.classList.remove('button-focus');
+    rainbowButton.classList.remove('button-focus')
+})
+
 
 // Make Reset Button
 
