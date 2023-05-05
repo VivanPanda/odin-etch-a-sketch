@@ -148,19 +148,20 @@ button:hover {
   background-color: gray;
   border: 1px solid black;
   color: white;
+  outline: none;
 }
 
 .menu-button {
-  width: 190px;
-  height: 50px;
-  font-size: 25px;
+  width: 170px;
+  height: 40px;
+  font-size: 20px;
 }
 
 .menu {
   border: 2px solid black;
   border-radius: 10px;
   background-color: #EEEEEE;
-  width: 300px;
+  width: 280px;
   height: 500px;
   position: fixed;
   left: 100px;

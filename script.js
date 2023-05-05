@@ -18,6 +18,9 @@ const resetButton = document.querySelector('.reset');
 const menuButtons = document.querySelector('.menu-button')
 const output = document.querySelector(".value");
 
+window.onload = function() {
+    blackButton.focus()
+}
 
 // Change output value next to slider text
 
@@ -51,7 +54,7 @@ function makeColorBlack() {
 // Change according to color picker value
 
 colorPicker.oninput = function () {
-    colorValue = colorPicker.value;
+    let colorValue = colorPicker.value;
     let gridBoxes = document.querySelectorAll('.grid-box');
     for (let b = 0; b < (gridBoxes.length); b++) {
         gridBoxes[b].addEventListener('mouseover', () => {
@@ -108,13 +111,24 @@ function erase() {
  })
 
 eraserButton.addEventListener('click', () => {
+    eraserButton.classList.add('eraser:focus')
     erase();
-    removeEventListener();
+    eraserButton.removeEventListener('click', eraserButton);
 })
 
 blackButton.addEventListener('click', () => {
-    makeColorBlack();
-    removeEventListener();
+    blackButton.classList.add('color-black:focus');
+    let colorValue = '#000000';
+
+    colorPicker.oninput = function () {
+        colorValue = colorPicker.value;
+        let gridBoxes = document.querySelectorAll('.grid-box');
+        for (let z = 0; z < (gridBoxes.length); z++) {
+            gridBoxes[z].addEventListener('mouseover', () => {
+                gridBoxes[z].style.backgroundColor = colorValue;
+            })
+        };
+    }
 })
 
 // Make Reset Button
