@@ -9,6 +9,7 @@ let cellWidth;
 let outputValue;
 let flexBasisValue;
 let gridBoxCreation;
+let randomColorValue;
 let gridHeight = 480;
 let gridWidth = 480;
 
@@ -159,7 +160,7 @@ eraserButton.addEventListener('click', () => {
 })
 
 rainbowButton.addEventListener('click', () => {
-    
+
     // Change selected button css
 
     rainbowButton.classList.add('button-focus');
@@ -167,6 +168,20 @@ rainbowButton.addEventListener('click', () => {
     eraserButton.classList.remove('button-focus');
     shadingButton.classList.remove('button-focus');
 
+    let gridBoxes = document.querySelectorAll('.grid-box');
+
+    // get random hex code
+
+    randomColorValue = Math.floor(Math.random()*16777215).toString(16);
+    randomColorValue = `#${randomColorValue}`;
+
+    for (let b = 0; b < (gridBoxes.length); b++) {
+        gridBoxes[b].addEventListener('mouseover', () => {
+            randomColorValue = Math.floor(Math.random()*16777215).toString(16);
+            randomColorValue = `#${randomColorValue}`;
+            gridBoxes[b].style.backgroundColor = randomColorValue;
+        })
+    };
 })
 
 shadingButton.addEventListener('click', () => {
