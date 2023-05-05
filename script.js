@@ -96,7 +96,16 @@ function erase() {
         gridBoxes[a].style.width = `${cellWidth}px`;    
         gridBoxes[a].style.flexBasis = flexBasisValue;
     }
+    
     makeColorBlack();
+
+    let colorValue = colorPicker.value;
+
+    for (let b = 0; b < (gridBoxes.length); b++) {
+        gridBoxes[b].addEventListener('mouseover', () => {
+            gridBoxes[b].style.backgroundColor = colorValue;
+        })
+    };
 
     colorPicker.addEventListener('input', () => {
         colorValue = colorPicker.value;
@@ -108,7 +117,6 @@ function erase() {
         };
     })
     
-    let colorValue = colorPicker.value;
  })
 
 colorPicker.addEventListener('click', () => {
