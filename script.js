@@ -18,8 +18,10 @@ const resetButton = document.querySelector('.reset');
 const menuButtons = document.querySelector('.menu-button')
 const output = document.querySelector(".value");
 
+// Make the color button enabled at the start
+
 window.onload = function() {
-    colorButton.focus()
+    colorButton.classList.add('color-button-focus');
 }
 
 // Change output value next to slider text
@@ -102,13 +104,23 @@ function erase() {
  })
 
 eraserButton.addEventListener('click', () => {
-    eraserButton.focus();
+
+    // Remove the color button focused css and add the eraser button focused css
+
+    eraserButton.classList.add('eraser-focus');
+    colorButton.classList.remove('color-button-focus');
+
     erase();
     eraserButton.removeEventListener('click', eraserButton);
 })
 
 colorButton.addEventListener('click', () => { 
-    colorButton.focus();
+
+    // Remove the eraser button focused css and add the colored button focused css
+    
+    colorButton.classList.add('color-button-focus');
+    eraserButton.classList.remove('eraser-focus');
+
     let colorValue = '#000000'; 
     colorValue = colorPicker.value;
     let gridBoxes = document.querySelectorAll('.grid-box');
