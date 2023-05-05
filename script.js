@@ -40,7 +40,7 @@ function createGrid (side) {
     }
 } 
 
-// Function to make the grid cells black
+// Function to make grid cells black
 
 function makeColorBlack() {
     let gridBoxes = document.querySelectorAll('.grid-box');
