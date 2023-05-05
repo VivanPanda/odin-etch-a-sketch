@@ -53,15 +53,15 @@ function makeColorBlack() {
 
 // Change according to color picker value
 
-colorPicker.oninput = function () {
-    let colorValue = colorPicker.value;
+colorPicker.addEventListener('input', () => {
+    colorValue = colorPicker.value;
     let gridBoxes = document.querySelectorAll('.grid-box');
     for (let b = 0; b < (gridBoxes.length); b++) {
         gridBoxes[b].addEventListener('mouseover', () => {
             gridBoxes[b].style.backgroundColor = colorValue;
         })
     };
-}
+})
 
 let colorValue = colorPicker.value;
 
@@ -97,7 +97,7 @@ function erase() {
     }
     makeColorBlack();
 
-    colorPicker.oninput = function () {
+    colorPicker.addEventListener('input', () => {
         colorValue = colorPicker.value;
         let gridBoxes = document.querySelectorAll('.grid-box');
         for (let b = 0; b < (gridBoxes.length); b++) {
@@ -105,8 +105,7 @@ function erase() {
                 gridBoxes[b].style.backgroundColor = colorValue;
             })
         };
-    }
-
+    })
     let colorValue = colorPicker.value;
  })
 
@@ -116,19 +115,15 @@ eraserButton.addEventListener('click', () => {
     eraserButton.removeEventListener('click', eraserButton);
 })
 
-blackButton.addEventListener('click', () => {
-    blackButton.classList.add('color-black:focus');
-    let colorValue = '#000000';
-
-    colorPicker.oninput = function () {
-        colorValue = colorPicker.value;
-        let gridBoxes = document.querySelectorAll('.grid-box');
-        for (let z = 0; z < (gridBoxes.length); z++) {
-            gridBoxes[z].addEventListener('mouseover', () => {
-                gridBoxes[z].style.backgroundColor = colorValue;
-            })
-        };
-    }
+blackButton.addEventListener('click', () => { 
+    let colorValue = '#000000'; 
+    colorValue = colorPicker.value;
+    let gridBoxes = document.querySelectorAll('.grid-box');
+    for (let b = 0; b < (gridBoxes.length); b++) {
+        gridBoxes[b].addEventListener('mouseover', () => {
+            gridBoxes[b].style.backgroundColor = colorValue;
+        })
+    };
 })
 
 // Make Reset Button
