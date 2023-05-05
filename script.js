@@ -111,6 +111,12 @@ function erase() {
     let colorValue = colorPicker.value;
  })
 
+colorPicker.addEventListener('click', () => {
+    colorButton.classList.add('color-button-focus');
+    eraserButton.classList.remove('eraser-focus');
+})
+
+ 
 eraserButton.addEventListener('click', () => {
 
     // Remove the color button focused css and add the eraser button focused css
