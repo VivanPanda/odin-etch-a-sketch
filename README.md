@@ -17,10 +17,13 @@ In Etch A Sketch, I revised my knowledge on JavaScript DOM Manipulation using ev
   - Event Listeners & Event Handlers: `change`, `mouseover`
 - String manipulation
   - String concatenation
+- Data attributes
 
 ### HTML
 
 - Using input types in HTML: `type="range", type="color"`
+- The `dataset` property
+- Data attributes
 
 ### CSS
 
