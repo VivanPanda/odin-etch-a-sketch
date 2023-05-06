@@ -42,6 +42,8 @@ function createGrid (side) {
     for (let i = 0; i < (side * side); i++) {
         gridBoxCreation = document.createElement('div');
         gridBoxCreation.classList.add("grid-box");
+        // Add a "shadingValue" variable to each box's "dataset"
+        gridBoxCreation.dataset.shadingValue = 1;
         gridContainer.appendChild(gridBoxCreation);
     }
 } 
@@ -187,11 +189,6 @@ rainbowButton.addEventListener('click', () => {
     };
 })
 
-let shadingColorValue1 = '#e8e8e8';
-let shadingColorValue2 = '#bdbdbd';
-let shadingColorValue3 = '#7a7a7a';
-let shadingColorValue4 = '#474747';
-let shadingColorValue5 = '#000000';
 let shadingValue = 0;
 
 shadingButton.addEventListener('click', () => {
@@ -204,25 +201,34 @@ shadingButton.addEventListener('click', () => {
     rainbowButton.classList.remove('button-focus')
 
     let gridBoxes = document.querySelectorAll('.grid-box');
-    for (let b = 0; b < (gridBoxes.length); b++) {
-        gridBoxes[b].addEventListener('mouseover', () => {
-            shadingValue += 1;
-            // console.log(shadingValue);
-            if (shadingValue == 1) {
-                gridBoxes[b].style.backgroundColor = '#e8e8e8';
-            } else if (shadingValue == 2) {
-                gridBoxes[b].style.backgroundColor = '#bdbdbd';
-            } else if (shadingValue == 3) {
-                gridBoxes[b].style.backgroundColor = '#7a7a7a';
-            } else if (shadingValue == 4) {
-                gridBoxes[b].style.backgroundColor = '#474747';
-            } else if (shadingValue == 5) {
-                gridBoxes[b].style.backgroundColor = '#000000';
-            }
-        })
-    };
+    // Remove previosly added event listeners for adding shade
+    gridBoxes.forEach(box => {
+        box.removeEventListener('mouseover', addShade);
+    // Add a new event listener
+        box.addEventListener('mouseover', (event) => {addShade(event)
+    });
+  })
 })
 
+
+function addShade(event) {
+  const box = event.currentTarget
+  const shadingValue = +box.dataset.shadingValue;
+  if (shadingValue == 1) {
+    box.style.backgroundColor = '#e8e8e8';
+  } else if (shadingValue == 2) {
+    box.style.backgroundColor = '#bdbdbd';
+  } else if (shadingValue == 3) {
+    box.style.backgroundColor = '#7a7a7a';
+  } else if (shadingValue == 4) {
+    box.style.backgroundColor = '#474747';
+  } else if (shadingValue == 5) {
+    box.style.backgroundColor = '#000000';
+  } else if (shadingValue == 0) {
+    box.style.backgroundColor = '#FFFFFF';
+  }
+  box.dataset.shadingValue = (shadingValue < 5) ? shadingValue + 1 : 5;
+}
 
 
 // Make Reset Button Functionality
