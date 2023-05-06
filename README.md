@@ -30,3 +30,8 @@ In Etch A Sketch, I revised my knowledge on JavaScript DOM Manipulation using ev
 - How to remove platform-native styling using `-webkit-appearance`
 - Pseudo class `:focus`
 - Removal of pointer events property using `pointer-events: none;`
+
+## Images
+
+<img src="screenshots/screenshot-1.png">
+<img src="screenshots/screenshot-2.png">
